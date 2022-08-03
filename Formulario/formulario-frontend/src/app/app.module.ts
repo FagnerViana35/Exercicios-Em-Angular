@@ -1,11 +1,11 @@
-import { HomeModule } from './home/home.module';
+import { CabecalhoModule } from './componentes/cabecalho/cabecalho.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MensagemComponent } from './mensagem/mensagem.component';
+import { RodapeModule } from './componentes/rodape/rodape.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,9 @@ import { MensagemComponent } from './mensagem/mensagem.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CabecalhoModule,
+    RodapeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

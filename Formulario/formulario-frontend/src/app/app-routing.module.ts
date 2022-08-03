@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path:'animais',
-    loadChildren: () =>import('./animais/animais.module').then((m)=>m.AnimaisModule)
+    loadChildren: () =>import('./componentes/animais/animais.module').then((m)=>m.AnimaisModule)
   },
 ];
 
