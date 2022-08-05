@@ -5,19 +5,21 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Animais } from './animal';
 
-const API=environment.apiURL;
+const API = environment.apiURL;
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimaisService {
 
-constructor(private httpClient: HttpClient, private tokenService: TokenService) { }
+constructor(private http: HttpClient, private tokenService: TokenService) { }
 
-  listaDoUsuario(nomeUsuario:string) :Observable<Animais>{
+  listaDoUsuario(nomeDoUsuario:string) :Observable<Animais>{
+    console.log(nomeDoUsuario)
       const token = this.tokenService.retornaToken();
       const headers = new HttpHeaders().append('x-access-token', token);
-      return this.httpClient.get<Animais>(`${API}/${nomeUsuario}/photos`, {headers:headers})
+      return this.http.get<Animais>(`${API}/${nomeDoUsuario}/photos`, {headers}
+    )
   }
 
 }

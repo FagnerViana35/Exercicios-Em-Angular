@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-const API=environment.apiURL;
+const API = environment.apiURL;
 
 @Component({
   selector: 'app-animal',
